@@ -11,8 +11,7 @@ jobs:
   cypress-e2e-electron:
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node-22.14.0-chrome-133.0.6943.53-1-ff-135.0-edge-133.0.3065.59-1
-      options: --user 1001
+      image: node-22.13.1-chrome-132.0.6834.159-1-ff-134.0.2-edge-132.0.2957.127-1
     steps:
         - name: Get code
           uses: actions/checkout@v4.2.2
@@ -32,7 +31,7 @@ jobs:
     needs: cypress-e2e-electron
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node-22.14.0-chrome-133.0.6943.53-1-ff-135.0-edge-133.0.3065.59-1
+      image: node-22.13.1-chrome-132.0.6834.159-1-ff-134.0.2-edge-132.0.2957.127-11
       options: --user 1001
     steps:
         - name: Get code
@@ -53,7 +52,7 @@ jobs:
     needs: cypress-e2e-chrome
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node-22.14.0-chrome-133.0.6943.53-1-ff-135.0-edge-133.0.3065.59-1
+      image: node-22.13.1-chrome-132.0.6834.159-1-ff-134.0.2-edge-132.0.2957.127-1
       options: --user 1001
     steps:
         - name: Get code
