@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node-22.14.0-chrome-133.0.6943.53-1-ff-135.0-edge-133.0.3065.59-1
+      options: --user 1001
     steps:
         - name: Get code
           uses: actions/checkout@v4.2.2
@@ -19,7 +20,7 @@ jobs:
         - name: Cypress run
           uses: cypress-io/github-action@v6.5.0      
           with:
-            install-command: yarn install
+            install-command: npm install
             browser: electron
             record: true
             group: UI Electron
@@ -40,7 +41,7 @@ jobs:
         - name: Cypress run
           uses: cypress-io/github-action@v6.5.0      
           with:
-            install-command: yarn install
+            install-command: npm install
             browser: chrome
             record: true
             group: UI Chrome
@@ -61,7 +62,7 @@ jobs:
         - name: Cypress run
           uses: cypress-io/github-action@v6.5.0      
           with:
-            install-command: yarn install
+            install-command: npm install
             browser: firefox
             record: true
             group: UI Firefox 
@@ -69,5 +70,3 @@ jobs:
           env:
            CYPRESS_RECORD_KEY: 42c8dc28-15e5-4e90-9443-5fde19781ce8
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
